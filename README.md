@@ -29,7 +29,7 @@ ZEPETO://GAMESYSTEM/pretest/pretest?worldMeta={{내부망 IP와 Port를 이용�
   "assetBundleWindows": "http://[내부 IP]/windows?__nocache=1641918793",
   "serverId": "",
   "packageInfo": {
-    "worldId": "com.idealtest.ideal",
+    "worldId": "",
     "version": "0.2.1.1641918793",
     "maxClients": 8,
     "canInvite": true,
