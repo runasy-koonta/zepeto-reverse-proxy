@@ -6,7 +6,7 @@ const qrcode = require('qrcode-terminal');
 const proxyPort = 8080;
 
 const readlinePromise = (query) => {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     const rl = readline.createInterface({
       input: process.stdin,
       output: process.stdout,
@@ -114,5 +114,7 @@ const requestMyExternalIP = async () => {
   }).listen(proxyPort);
 
   console.log(`Reverse proxy for ZEPETO World is running on port ${proxyPort}!`);
-  qrcode.generate(`ZEPETO://GAMESYSTEM/pretest/pretest?worldMeta=${encodeURIComponent(`http://${newServer}:${proxyPort}`)}&gatewayHost=${newServer}&gatewayPort=${gatewayPort}&gatewaySecured=false`, {small: true});
+  const zepetoNewURL = `ZEPETO://GAMESYSTEM/pretest/pretest?worldMeta=${encodeURIComponent(`http://${newServer}:${proxyPort}`)}&gatewayHost=${newServer}&gatewayPort=${gatewayPort}&gatewaySecured=false`;
+  console.log(`URL: ${zepetoNewURL}`);
+  qrcode.generate(zepetoNewURL, {small: true});
 })();
